@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <RelativeLayout style="@style/match_match"
+        android:layout_above="@+id/fab">
+
+        <LinearLayout
+            android:id="@+id/content_product_details_header"
+            style="@style/match_wrap"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/product_image_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/collapsing_toolbar_height"
+                android:adjustViewBounds="true" />
+        </LinearLayout>
+
+        <com.zappos.consumer.custom.CustomTextView
+            android:id="@+id/add_to_cart_view"
+            style="@style/wrap_wrap"
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:text="+1"
+            android:background="@drawable/rounded_circle"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/black" />
+
+        <RelativeLayout
+            android:id="@+id/content_product_details"
+            style="@style/match_wrap"
+            android:layout_below="@+id/content_product_details_header"
+            android:padding="@dimen/dimen_10">
+
+            <ImageView
+                android:id="@+id/product_image"
+                style="@style/wrap_wrap"
+                android:scaleType="fitCenter"
+                android:transitionName="@string/transition_string" />
+
+            <com.zappos.consumer.custom.CustomTextView
+                android:id="@+id/product_name"
+                style="@style/match_wrap"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_toRightOf="@+id/product_image"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dimen_10"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/textsize_18" />
+
+            <RatingBar
+                android:id="@+id/ratingbar"
+                style="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_name"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/colorDivider"
+                android:progressTint="@color/colorSecondaryText"
+                android:rating="4"
+                android:secondaryProgressTint="@color/colorDivider"
+                android:stepSize="0.5" />
+
+            <com.zappos.consumer.custom.CustomTextView
+                style="@style/match_wrap"
+                android:layout_below="@+id/product_name"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_toRightOf="@+id/ratingbar"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dimen_10"
+                android:text="98 Reviews"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/textsize_18" />
+
+            <com.zappos.consumer.custom.CustomTextView
+                android:id="@+id/product_price"
+                style="@style/match_wrap"
+                android:layout_below="@+id/ratingbar"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_toRightOf="@+id/product_image"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dimen_10"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/textsize_18" />
+
+            <LinearLayout
+                android:id="@+id/add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_price"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:layout_toRightOf="@+id/product_image"
+                android:background="@drawable/rounded_corners_green"
+                android:padding="@dimen/dimen_12">
+
+                <com.zappos.consumer.custom.CustomTextView
+                    style="@style/match_wrap"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:drawableLeft="@drawable/ic_shopping_cart"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="left"
+                    android:text="ADD TO SHOPPING CART"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/textsize_18" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:onClick="onClick"
+        android:src="@drawable/ic_shopping_cart" />
+
+</RelativeLayout>

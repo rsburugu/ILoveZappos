@@ -1,0 +1,35 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    style="@style/match_match">
+
+    <android.support.design.widget.AppBarLayout
+        style="@style/match_wrap"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/HeaderTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:title="@string/app_name"
+            android:titleTextColor="@android:color/white"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <com.zappos.consumer.custom.CustomTextView
+                android:id="@+id/toolbar_title"
+                style="@style/match_wrap"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_products_details" />
+
+</android.support.design.widget.CoordinatorLayout>
